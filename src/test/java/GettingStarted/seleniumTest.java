@@ -31,7 +31,9 @@ public class seleniumTest {
 
         //contextmenue(driver);
 
-        DynamicControls(driver);
+       // DynamicControls(driver);
+
+        DragAndDrop(driver);
 
 
     }
@@ -112,6 +114,12 @@ public class seleniumTest {
        wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='input-example']/input"))));
    }
    //hello this is comment
+
+    private static void DragAndDrop(WebDriver driver){
+        driver.get("https://the-internet.herokuapp.com/drag_and_drop");
+
+        uiElementExtension.performDragDrop(driver,By.id("column-a"),By.id("column-b"));
+    }
 
     }
 
